@@ -2,14 +2,12 @@
 
 
 ## 📈 Resumen
-✅ 1 correctas de 1 queries
+✅ 0 correctas de 2 queries
 
-## ✅ Query 1: Correcto
+## ❌ Query 1: Error
+- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT nombre, apellido1, apellido2 FROM persona WHERE telefono IS NULL' at line 5
 
-⏱ Tiempo: 0.44 ms
-🔍 No se usó ningún índice en esta consulta.
 
-🚨 **Problemas detectados:**
-🚨 `JOIN` sin índice. Revisar claves foráneas e índices.
+## ❌ Query 2: Error
+- **Descripción**: 'NoneType' object is not iterable
 
----
