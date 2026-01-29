@@ -36,7 +36,7 @@
  Strosin | Turcotte | Ismael
 ```
 
-⏱ Tiempo: 0.47 ms
+⏱ Tiempo: 0.41 ms
 🔍 No se usó ningún índice en esta consulta.
 
 🚨 **Problemas detectados:**
