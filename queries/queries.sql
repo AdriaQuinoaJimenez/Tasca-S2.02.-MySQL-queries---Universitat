@@ -5,7 +5,7 @@ SELECT apellido1, apellido2, nombre FROM persona WHERE tipo = 'alumno' ORDER BY 
 SELECT nombre, apellido1, apellido2 FROM persona WHERE telefono IS NULL AND tipo = 'alumno';
 
 -- 3. Retorna el llistat dels alumnes que van néixer en 1999. (id, nombre, apellido1, apellido2, fecha_nacimiento)
-
+SELECT id, nombre, apellido1, apellido2, fecha_nacimiento FROM persona WHERE YEAR(fecha_nacimiento) = 1999;
 
 
 -- 4. Retorna el llistat de professors/es que no han donat d'alta el seu número de telèfon en la base de dades i a més el seu NIF acaba en K. (nombre, apellido1, apellido2, nif)
