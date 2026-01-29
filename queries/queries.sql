@@ -2,7 +2,7 @@
 SELECT apellido1, apellido2, nombre FROM persona WHERE tipo = 'alumno' ORDER BY apellido1, apellido2, nombre ASC
 
 -- 2. Esbrina el nom i els dos cognoms dels alumnes que no han donat d'alta el seu número de telèfon en la base de dades. (nombre, apellido1, apellido2)
-SELECT nombre, apellido1, apellido2 FROM persona WHERE telefono IS NULL;
+SELECT nombre, apellido1, apellido2 FROM persona WHERE telefono IS NULL
 
 -- 3. Retorna el llistat dels alumnes que van néixer en 1999. (id, nombre, apellido1, apellido2, fecha_nacimiento)
 
