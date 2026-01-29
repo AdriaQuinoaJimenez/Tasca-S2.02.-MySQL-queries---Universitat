@@ -21,7 +21,7 @@ SELECT p.apellido1, p.apellido2, p.nombre, d.nombre AS 'departamento' FROM perso
 SELECT a.nombre, curso.anyo_inicio, curso.anyo_fin FROM asignatura a INNER JOIN alumno_se_matricula_asignatura matr ON a.id = matr.id_asignatura INNER JOIN curso_escolar curso ON curso.id = matr.id_curso_escolar INNER JOIN persona p ON p.id = matr.id_alumno WHERE p.nif = '26902806M';
 
 -- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015). (nombre)
-
+SELECT d.nombre, a.nombre, prof.id_profesor, g.nombre FROM departamento d INNER JOIN profesor prof ON d.id = prof.id_departamento INNER JOIN asignatura a ON a.id_profesor = prof.id_profesor INNER JOIN grado g ON g.id = a.id_grado WHERE g.nombre LIKE '%Plan 2015%';
 
 -- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019. (nombre, apellido1, apellido2)
 
