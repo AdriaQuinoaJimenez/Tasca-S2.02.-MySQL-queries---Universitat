@@ -24,7 +24,7 @@ SELECT a.nombre, curso.anyo_inicio, curso.anyo_fin FROM asignatura a INNER JOIN 
 SELECT DISTINCT d.nombre FROM departamento d INNER JOIN profesor prof ON d.id = prof.id_departamento INNER JOIN asignatura a ON a.id_profesor = prof.id_profesor INNER JOIN grado g ON g.id = a.id_grado WHERE g.nombre LIKE '%Plan 2015%';
 
 -- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019. (nombre, apellido1, apellido2)
-
+SELECT DISTINCT p.nombre, p.apellido1, p.apellido2 FROM persona p INNER JOIN alumno_se_matricula_asignatura matr ON p.id = matr.id_alumno INNER JOIN curso_escolar curso ON curso.id = matr.id_curso_escolar WHERE (curso.anyo_inicio, curso.anyo_fin) = (2018, 2019);
 
 -- Resol les 6 següents consultes utilitzant les clàusules LEFT JOIN i RIGHT JOIN.
 -- 10. Retorna un llistat amb els noms de tots els professors/es i els departaments que tenen vinculats. El llistat també ha de mostrar aquells professors/es que no tenen cap departament associat. El llistat ha de retornar quatre columnes, nom del departament, primer cognom, segon cognom i nom del professor/a. El resultat estarà ordenat alfabèticament de menor a major pel nom del departament, cognoms i el nom. (departamento, apellido1, apellido2, nombre)
