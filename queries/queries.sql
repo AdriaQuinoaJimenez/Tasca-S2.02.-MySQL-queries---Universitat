@@ -30,7 +30,8 @@ SELECT DISTINCT p.nombre, p.apellido1, p.apellido2 FROM persona p INNER JOIN alu
 SELECT d.nombre AS 'departamento', p.apellido1, p.apellido2, p.nombre FROM profesor prof LEFT JOIN persona p ON p.id = prof.id_profesor LEFT JOIN departamento d ON d.id = prof.id_departamento ORDER BY d.nombre, p.apellido1, p.apellido2, p.nombre;
 
 -- 11. Retorna un llistat amb els professors/es que no estan associats a un departament. (apellido1, apellido2, nombre)
-SELECT p.apellido1, p.apellido2, p.nombre FROM profesor prof LEFT JOIN persona p ON p.id = prof.id_profesor LEFT JOIN departamento d ON d.id = prof.id_departamento WHERE prof.id_departamento IS NULL;
+SELECT p.apellido1, p.apellido2, p.nombre FROM profesor prof LEFT JOIN persona p ON p.id = prof.id_profesor WHERE prof.id_departamento IS NULL;
+
 -- 12. Retorna un llistat amb els departaments que no tenen professors/es associats. (nombre)
 
 
