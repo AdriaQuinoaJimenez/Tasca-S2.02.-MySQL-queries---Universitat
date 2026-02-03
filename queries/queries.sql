@@ -45,7 +45,7 @@ SELECT a.id, a.nombre FROM asignatura a LEFT JOIN profesor prof ON prof.id_profe
 SELECT DISTINCT d.nombre FROM departamento d LEFT JOIN profesor prof ON prof.id_departamento = d.id LEFT JOIN asignatura a ON a.id_profesor = prof.id_profesor LEFT JOIN alumno_se_matricula_asignatura matr ON matr.id_asignatura = a.id WHERE matr.id_curso_escolar IS NULL;
 
 -- 16. Retorna el nombre total d'alumnes que hi ha. (total)
-
+SELECT COUNT(matr.id_alumno) AS 'total' FROM persona p RIGHT JOIN alumno_se_matricula_asignatura matr ON matr.id_alumno = p.id;
 
 -- 17. Calcula quants alumnes van néixer en 1999. (total)
 
