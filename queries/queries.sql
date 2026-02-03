@@ -74,4 +74,4 @@ SELECT prof.id_profesor AS 'id', p.nombre, p.apellido1, p.apellido2, COUNT(a.id)
 -- 25. Retorna totes les dades de l'alumne/a més jove. (*)
 SELECT p.id, p.nif, p.nombre, p.apellido1, p.apellido2, p.ciudad, p.direccion, p.telefono, p.fecha_nacimiento, p.sexo, p.tipo FROM alumno_se_matricula_asignatura matr LEFT JOIN persona p ON matr.id_alumno = p.id ORDER BY p.fecha_nacimiento DESC LIMIT 1;
 -- 26. Retorna un llistat amb els professors/es que tenen un departament associat i que no imparteixen cap assignatura. (apellido1, apellido2, nombre)
-
+SELECT DISTINCT p.apellido1, p.apellido2, p.nombre FROM profesor prof LEFT JOIN persona p ON p.id = prof.id_profesor LEFT JOIN asignatura a ON a.id_profesor = prof.id_profesor WHERE prof.id_departamento IS NOT NULL AND a.id_profesor IS NULL;
