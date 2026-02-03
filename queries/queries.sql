@@ -72,7 +72,7 @@ SELECT c.anyo_inicio, COUNT(DISTINCT matr.id_alumno) AS 'total' FROM curso_escol
 SELECT prof.id_profesor AS 'id', p.nombre, p.apellido1, p.apellido2, COUNT(a.id) AS 'total' FROM profesor prof LEFT JOIN persona p ON prof.id_profesor = p.id LEFT JOIN asignatura a ON a.id_profesor = prof.id_profesor GROUP BY prof.id_profesor, p.nombre, p.apellido1, p.apellido2 ORDER BY total DESC;
 
 -- 25. Retorna totes les dades de l'alumne/a més jove. (*)
-
+SELECT * FROM alumno_se_matricula_asignatura matr LEFT JOIN persona p ON matr.id_alumno = p.id ORDER BY p.fecha_nacimiento DESC LIMIT 1;
 
 -- 26. Retorna un llistat amb els professors/es que tenen un departament associat i que no imparteixen cap assignatura. (apellido1, apellido2, nombre)
 
