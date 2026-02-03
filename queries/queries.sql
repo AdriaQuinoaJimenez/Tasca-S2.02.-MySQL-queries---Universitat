@@ -51,7 +51,7 @@ SELECT COUNT(id) AS 'total' FROM persona WHERE tipo = 'alumno';
 SELECT COUNT(id)  AS 'total' FROM persona WHERE tipo = 'alumno' AND YEAR(fecha_nacimiento) = 1999;
 
 -- 18. Calcula quants professors/es hi ha en cada departament. El resultat només ha de mostrar dues columnes, una amb el nom del departament i una altra amb el nombre de professors/es que hi ha en aquest departament. El resultat només ha d'incloure els departaments que tenen professors/es associats i haurà d'estar ordenat de major a menor pel nombre de professors/es. (departamento, total)
-SELECT d.nombre, COUNT(prof.id_profesor) AS 'total' FROM departamento d INNER JOIN profesor prof ON prof.id_departamento = d.id GROUP BY d.nombre ORDER BY total DESC;
+SELECT d.nombre AS 'departamento', COUNT(prof.id_profesor) AS 'total' FROM departamento d INNER JOIN profesor prof ON prof.id_departamento = d.id GROUP BY d.nombre ORDER BY total DESC;
 
 -- 19. Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. Tingui en compte que poden existir departaments que no tenen professors/es associats. Aquests departaments també han d'aparèixer en el llistat. (departamento, total)
 
