@@ -69,6 +69,7 @@ SELECT g.nombre AS 'grau', a.tipo AS 'tipo', SUM(a.creditos) AS 'total_creditos'
 SELECT c.anyo_inicio, COUNT(DISTINCT matr.id_alumno) AS 'total' FROM curso_escolar c INNER JOIN alumno_se_matricula_asignatura matr ON matr.id_curso_escolar = c.id GROUP BY c.anyo_inicio;
 
 -- 24. Retorna un llistat amb el nombre d'assignatures que imparteix cada professor/a. El llistat ha de tenir en compte aquells professors/es que no imparteixen cap assignatura. El resultat mostrarà cinc columnes: id, nom, primer cognom, segon cognom i nombre d'assignatures. El resultat estarà ordenat de major a menor pel nombre d'assignatures. (id, nombre, apellido1, apellido2, total)
+SELECT prof.id_profesor AS 'id', p.nombre, p.apellido1, p.apellido2, COUNT(a.id) AS 'total' FROM profesor prof LEFT JOIN persona p ON prof.id_profesor = p.id LEFT JOIN asignatura a ON a.id_profesor = prof.id_profesor GROUP BY prof.id_profesor, p.nombre, p.apellido1, p.apellido2 ORDER BY total DESC;
 
 -- 25. Retorna totes les dades de l'alumne/a més jove. (*)
 
