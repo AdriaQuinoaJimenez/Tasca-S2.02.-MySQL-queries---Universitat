@@ -7,7 +7,6 @@ SELECT nombre, apellido1, apellido2 FROM persona WHERE telefono IS NULL AND tipo
 -- 3. Retorna el llistat dels alumnes que van néixer en 1999. (id, nombre, apellido1, apellido2, fecha_nacimiento)
 SELECT id, nombre, apellido1, apellido2, fecha_nacimiento FROM persona WHERE YEAR(fecha_nacimiento) = 1999;
 
-
 -- 4. Retorna el llistat de professors/es que no han donat d'alta el seu número de telèfon en la base de dades i a més el seu NIF acaba en K. (nombre, apellido1, apellido2, nif)
 SELECT nombre, apellido1, apellido2, nif FROM persona WHERE tipo = 'profesor' AND telefono IS NULL AND nif LIKE '%K';
 
@@ -31,7 +30,7 @@ SELECT DISTINCT p.nombre, p.apellido1, p.apellido2 FROM persona p INNER JOIN alu
 SELECT d.nombre AS 'departamento', p.apellido1, p.apellido2, p.nombre FROM profesor prof LEFT JOIN persona p ON p.id = prof.id_profesor LEFT JOIN departamento d ON d.id = prof.id_departamento ORDER BY d.nombre, p.apellido1, p.apellido2, p.nombre;
 
 -- 11. Retorna un llistat amb els professors/es que no estan associats a un departament. (apellido1, apellido2, nombre)
-
+SELECT p.apellido1, p.apellido2, p.nombre FROM persona p LEFT JOIN profesor prof ON p.id = prof.id_profesor LEFT JOIN departamento d ON d.id = prof.id_departamento WHERE prof.id_departamento IS NULL;
 
 -- 12. Retorna un llistat amb els departaments que no tenen professors/es associats. (nombre)
 
