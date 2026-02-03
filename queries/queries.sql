@@ -35,9 +35,8 @@ SELECT p.apellido1, p.apellido2, p.nombre FROM profesor prof LEFT JOIN persona p
 -- 12. Retorna un llistat amb els departaments que no tenen professors/es associats. (nombre)
 SELECT d.nombre FROM departamento d LEFT JOIN profesor prof ON prof.id_departamento = d.id WHERE prof.id_profesor IS NULL;
 
-
 -- 13. Retorna un llistat amb els professors/es que no imparteixen cap assignatura. (apellido1, apellido2, nombre)
-
+SELECT p.apellido1, p.apellido2, p.nombre FROM profesor prof LEFT JOIN persona p ON p.id = prof.id_profesor LEFT JOIN asignatura a ON a.id_profesor = prof.id_profesor WHERE a.id_profesor IS NULL;
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
 
